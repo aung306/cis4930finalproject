@@ -29,7 +29,8 @@ async function fetchPlayerData(player, tag) {
 
         const response2 = await axios.get('https://api.henrikdev.xyz/valorant/v2/by-puuid/mmr/na/' + puuid);
         console.log('Current Rank: ', response2.data.data.current_data.currenttierpatched);
-        console.log('Elo (MMR): ', response2.data.data.current_data.elo)
+        console.log('Elo (MMR): ', response2.data.data.current_data.elo);
+        console.log('Current Tier: ', response2.data.data.current_data.currenttier);
 
     } catch (error) {
         console.error('Error fetching data:', error);
