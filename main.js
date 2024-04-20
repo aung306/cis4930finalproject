@@ -1,9 +1,10 @@
 const axios = require('axios');
 
-var reds = [200, 600, 500, 600, 600];
-var blues = [7000, 600, 600, 600, 400];
+var reds = ["Phoenix", "Clove", "Reyna", "Skye", "Cypher"];
+var blues = ["Clove", "Sova", "Reyna", "Neon", "Cypher"];
 module.exports = reds;
 module.exports = blues;
+   
 
 //this fetches the match data of the last game
 async function fetchLastMatch(player, tag) {
@@ -20,22 +21,17 @@ async function fetchLastMatch(player, tag) {
         let blueteam = [];
 
         while(blue[temp - 1000] != null) {
-            redteam.push(red[temp - 1000].puuid);
-            blueteam.push(blue[temp - 1000].puuid);
+            redteam.push(red[temp - 1000].character); //.puuid to get player id 
+            blueteam.push(blue[temp - 1000].character); //.character to get character
             temp++;
         }
         
         blues = blueteam;
         reds = redteam;
+        console.log("Let's analyze your last match.")
         console.log(blues);
         console.log(reds);
         //blue has the blue team stats and red has the red team stats
-
-        //TO DO: 
-        //1. create function that gets mmr of all valorant players in red and blue team
-        //2. set the two arrays to blues and reds
-        //eventually we want to import more data as well
-
         //return map
         return response.data.data[0].metadata.map;
     } catch (error) {
