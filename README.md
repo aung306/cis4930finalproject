@@ -1,6 +1,10 @@
 # CIS4930 Final Project
 ### Angela Ung & David Vallejo-Lozano
 
+## Running
+Run 'npm install' and 'node main.js' to start personal evaluation
+Navigate to winrate.ipynb to use machine learning algorithm
+
 Predicting Outcome of Valorant Competitive Matches with Machine Learning
 
 ## Motivation
